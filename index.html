@@ -2,13 +2,21 @@
     
     <head>
         <title>
-            Title
+            Happy birthday Tom!
         </title>
+        
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     
     <body>
         <center>
-            [ask a question here]
+        
+            <div class="container">
+                Select a challenge: <br>
+                <button id="sample">Sample</button>
+                <div id="question" class="question"></div>
+            </div>
+            
             <br>
             
             <div class="container">
@@ -23,18 +31,26 @@
         </center>
         
         <script>
-            var question = 0;
+            var question = document.getElementById("question");
+            
+            var b1 = document.getElementById("sample");
+            
+            b1.onclick = function() {
+                question.className = "question-sample";
+                msg.value = "Type the answer to unlock a message!";
+            }
+            
             var ansField = document.getElementById("answer");
             var goButton = document.getElementById("go");
             var msg = document.getElementById("message");
             
             goButton.onclick = function() {
                 ans = ansField.value
-                if (ans === "Yes") {
+                if (question.className === "question-sample" && ans === "Yes") {
                     msg.value = "Here is a message";
                 }
                 else {
-                    msg.value = "???????????????????";
+                    msg.value = "Incorrect answer!";
                 }
             }
         </script>

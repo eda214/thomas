@@ -1,0 +1,6 @@
+.question-sample {
+    background: #fff url('./questions/sample.png');
+    background-size: cover;
+    width: 1200;
+    height: 675;
+}
