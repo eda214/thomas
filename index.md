@@ -2,7 +2,7 @@
 	
 	<head>
 		<title>
-			Title
+			Title!
 		</title>
 	</head>
 	
