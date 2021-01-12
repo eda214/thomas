@@ -4,3 +4,17 @@
     width: 1200;
     height: 675;
 }
+
+.question-masterchef {
+    background: #fff url('./questions/masterchef.png');
+    background-size: cover;
+    width: 1200;
+    height: 675;
+}
+
+.question-last {
+    background: #fff url('./questions/last.png');
+    background-size: cover;
+    width: 1200;
+    height: 675;
+}

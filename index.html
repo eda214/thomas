@@ -14,6 +14,8 @@
             <div class="container">
                 Select a challenge: <br>
                 <button id="sample">Sample</button>
+                <button id="masterchef">Master Chef</button>
+                <button id="last">The Last Challenge</button>
                 <div id="question" class="question"></div>
             </div>
             
@@ -33,10 +35,21 @@
         <script>
             var question = document.getElementById("question");
             
-            var b1 = document.getElementById("sample");
-            
-            b1.onclick = function() {
+            var bsample = document.getElementById("sample");
+            bsample.onclick = function() {
                 question.className = "question-sample";
+                msg.value = "Type the answer to unlock a message!";
+            }
+            
+            var bmasterchef = document.getElementById("masterchef");
+            bmasterchef.onclick = function() {
+                question.className = "question-masterchef";
+                msg.value = "Type the answer to unlock a message!";
+            }
+            
+            var blast = document.getElementById("last");
+            blast.onclick = function() {
+                question.className = "question-last";
                 msg.value = "Type the answer to unlock a message!";
             }
             
@@ -47,7 +60,13 @@
             goButton.onclick = function() {
                 ans = ansField.value
                 if (question.className === "question-sample" && ans === "Yes") {
-                    msg.value = "Here is a message";
+                    msg.value = "Here will appear a message";
+                }
+                else if (question.className === "question-masterchef" && ans === "grilled cheese") {
+                    msg.value = "Here will appear another message.";
+                }
+                else if (question.className === "question-last" && ans === "Let's go, Tom!!!") {
+                    msg.value = "Once we have all the messages, I'll put a link here to a PDF with all of them for Tom to download.";
                 }
                 else {
                     msg.value = "Incorrect answer!";
