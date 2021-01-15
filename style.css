@@ -12,9 +12,24 @@
     height: 675;
 }
 
+.question-election {
+    background: #fff url('./questions/election.png');
+    background-size: cover;
+    width: 1200;
+    height: 675;
+}
+
 .question-last {
     background: #fff url('./questions/last.png');
     background-size: cover;
     width: 1200;
     height: 675;
+}
+
+.message {
+    background: #fff;
+    width: 1200;
+    height: 1600;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
 }
