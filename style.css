@@ -12,6 +12,13 @@
     height: 675;
 }
 
+.question-zoom {
+    background: #fff url('./questions/zoom.png');
+    background-size: cover;
+    width: 1200;
+    height: 675;
+}
+
 .question-election {
     background: #fff url('./questions/election.png');
     background-size: cover;
