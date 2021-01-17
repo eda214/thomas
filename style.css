@@ -1,42 +1,49 @@
 .question-sample {
     background: #fff url('./questions/sample.png');
     background-size: cover;
-    width: 1200;
-    height: 675;
-}
-
-.question-masterchef {
-    background: #fff url('./questions/masterchef.png');
-    background-size: cover;
-    width: 1200;
-    height: 675;
+    width: 800;
+    height: 450;
 }
 
 .question-zoom {
     background: #fff url('./questions/zoom.png');
     background-size: cover;
-    width: 1200;
-    height: 675;
+    width: 800;
+    height: 450;
+}
+
+.question-masterchef {
+    background: #fff url('./questions/masterchef.png');
+    background-size: cover;
+    width: 800;
+    height: 450;
 }
 
 .question-election {
     background: #fff url('./questions/election.png');
     background-size: cover;
-    width: 1200;
-    height: 675;
+    width: 800;
+    height: 450;
+}
+
+.question-trails {
+    background: #fff url('./questions/trails.png');
+    background-size: cover;
+    width: 800;
+    height: 450;
 }
 
 .question-last {
     background: #fff url('./questions/last.png');
     background-size: cover;
-    width: 1200;
-    height: 675;
+    width: 800;
+    height: 450;
 }
 
 .message {
     background: #fff;
-    width: 1200;
-    height: 1600;
+    width: 800;
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
+    text-align: left;
 }

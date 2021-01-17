@@ -14,9 +14,10 @@
             <div class="container">
                 Select a challenge (I've put the answers at the bottom for now if you want to see them): <br>
                 <button id="sample">Sample</button>
-                <button id="masterchef">Master Chef (straightforward example)</button>
                 <button id="zoom">Zoom</button>
-                <button id="election">Election (hard example)</button>
+                <button id="masterchef">Master Chef</button>
+                <button id="trails">Trails</button>
+                <button id="election">Election</button>
                 <button id="last">The Last Challenge</button>
                 <div id="question" class="question-none"></div>
             </div>
@@ -33,14 +34,13 @@
             
             <br>
             
-            <div id="output">
-            <textarea class="message" readonly id="message"></textarea>
-            </div>
+            <div id="output" class="empty"></div>
             
             <br> <br> <br> <br> <br> <br>
             Answers<br>
-            Master Chef: grilled cheese<br>
             Zoom: Hey dudes<br>
+            Master Chef: beautiful<br>
+            Trails: 0.903<br>
             Election: 272<br>
             The Last Challenge: Let's go, Tom!!!<br>
         </center>
@@ -51,67 +51,90 @@
             
             var bsample = document.getElementById("sample");
             bsample.onclick = function() {
+                output.className = "empty";
                 question.className = "question-sample";
                 addl.style.visibility = 'hidden';
-                msg.value = "Type the answer to unlock a message!";
-            }
-            
-            var bmasterchef = document.getElementById("masterchef");
-            bmasterchef.onclick = function() {
-                question.className = "question-masterchef";
-                addl.style.visibility = 'hidden';
-                msg.value = "Type the answer to unlock a message!";
+                output.innerHTML = "Type the answer to unlock a message!";
             }
             
             var bzoom = document.getElementById("zoom");
             bzoom.onclick = function() {
+                output.className = "empty";
                 question.className = "question-zoom";
                 addl.style.visibility = 'visible';
-                addl.innerHTML = "<a href=https://www.youtube.com/watch?v=E1dXqyNCHYM>https://www.youtube.com/watch?v=E1dXqyNCHYM</a>";
-                msg.value = "Type the answer to unlock a message!";
+                addl.innerHTML = "<a href=\"https://www.youtube.com/watch?v=E1dXqyNCHYM\" target=\"_blank\">https://www.youtube.com/watch?v=E1dXqyNCHYM</a>";
+                output.innerHTML = "Type the answer to unlock a message!";
+            }
+            
+            var bmasterchef = document.getElementById("masterchef");
+            bmasterchef.onclick = function() {
+                output.className = "empty";
+                question.className = "question-masterchef";
+                addl.style.visibility = 'hidden';
+                output.innerHTML = "Type the answer to unlock a message!";
+            }
+            
+            var btrails = document.getElementById("trails");
+            btrails.onclick = function() {
+                output.className = "empty";
+                question.className = "question-trails";
+                addl.style.visibility = 'hidden';
+                output.innerHTML = "Type the answer to unlock a message!";
             }
             
             var belection = document.getElementById("election");
             belection.onclick = function() {
+                output.className = "empty";
                 question.className = "question-election";
                 addl.style.visibility = 'visible';
-                msg.value = "Type the answer to unlock a message!";
+                addl.innerHTML = "If you're using a computer, <a href=\"./files/states.txt\" target=\"_blank\">this text file</a> with each state's electoral votes and connecting states may be helpful.";
+                output.innerHTML = "Type the answer to unlock a message!";
             }
             
             var blast = document.getElementById("last");
             blast.onclick = function() {
+                output.className = "empty";
                 question.className = "question-last";
                 addl.style.visibility = 'hidden';
-                msg.value = "Type the answer to unlock a message!";
+                output.innerHTML = "Type the answer to unlock a message!";
             }
             
             var ansField = document.getElementById("answer");
             var goButton = document.getElementById("go");
-            var msg = document.getElementById("message");
             
             goButton.onclick = function() {
                 ans = ansField.value
                 if (question.className === "question-sample" && ans === "Yes") {
-                    msg.value = "Here will appear a message";
-                }
-                else if (question.className === "question-masterchef" && ans === "grilled cheese") {
-                    msg.value = "Happy birthday Tom! Can’t wait to see you in Kirkland for realsies. - Michael Baick \n \n"
-                                + "Hey dude! Happy bird-day!! Let's hope the only downsizing this year is the number of Ferrero Rochers consumed. In all seriousness, hope you have a great day and can't wait to celebrate with you in person soon! You (and your Mom) were incredible in KDS, and I'm so grateful we met through Kirkland. Can't wait for a spring filled with oreos, Office episodes, original memes, and olive oil!! - Ellie \n \n \n"
-                                + "Hey Tom,\n\nHappy birthday, and hopefully this is a great day and the start of a great year for you! I really miss you and everything that used to happen back when we were living together in B-34, but hopefully we’ll get to reunite soon. In the meantime, though, seeing you on Zoom and hearing the weekly “Oh, hey, dudes!” has always been something to look forward to. Just like your screams when you’re losing (to someone who isn’t me) in Smash, your energy never fails to carry over any distance, no matter how long, and make us smile.\n\nIt would be remiss of me, however, not to mention everything else you bring to those around you. We’re so lucky to have a talented pianist, innovative bot maker, patient pset buddy, and understanding and caring friend among us. Thank you for being the person you are, Tom. I can’t wait to see you again and, once things are back to normal, give you a big hug.\n\nLove,\nEdward";
+                    output.className = "message";
+                    output.innerHTML = "Here will appear a message";
                 }
                 else if (question.className === "question-zoom" && ans.toLowerCase().includes("hey") && ans.toLowerCase().includes("dudes")) {
-                    msg.value = "Happy happy birthday Tom!! Hearing your “hey bud!” upon joining the Kirkland Zoom is always a highlight of my week. Your presence, thoughtfulness, humor, wisdom, and willingness to listen have brought light to so many otherwise-difficult moments, from our abrupt departure from school to a very long election night. I’m so grateful to have grown closer to you over the past year, and I can’t wait for the semester ahead with you. Wishing you a day and year full of nature, sunset runs, chocolate, Multigrain Cheerios, good classes, laughter, peace, and happiness — you deserve the world! - Alia \n \n \n"
-                                + "HELLLOOOO TOM!!!\n \nas I recently mentioned in my dreams you offered to carry me across a Venus fly trap field... and then you carried me!!! Shows how consciously and subconsciously I view you as such a reliable and thoughtful friend. From day 1 I've admired your adventure seeking spirit and how dedicated you are to what you put your mind to. You're always there for your friends no matter what and in all your interactions with us you build people up with like solid, humorous comportment! Idk how to describe it, but your \"hey bud\" brightens up so many ppl's days and I know it's made me feel better when life is feeling a bit cloudy. Come to think of it, Tom, you're always so cheery and fun...how does he do it????!! - Anastasia"
+                    output.className = "message";
+                    output.innerHTML = "Happy happy birthday Tom!! Hearing your “hey bud!” upon joining the Kirkland Zoom is always a highlight of my week. Your presence, thoughtfulness, humor, wisdom, and willingness to listen have brought light to so many otherwise-difficult moments, from our abrupt departure from school to a very long election night. I’m so grateful to have grown closer to you over the past year, and I can’t wait for the semester ahead with you. Wishing you a day and year full of nature, sunset runs, chocolate, Multigrain Cheerios, good classes, laughter, peace, and happiness — you deserve the world! - Alia <br> <br> <br>"
+                                       + "HELLLOOOO TOM!!!<br> <br>as I recently mentioned in my dreams you offered to carry me across a Venus fly trap field... and then you carried me!!! Shows how consciously and subconsciously I view you as such a reliable and thoughtful friend. From day 1 I've admired your adventure seeking spirit and how dedicated you are to what you put your mind to. You're always there for your friends no matter what and in all your interactions with us you build people up with like solid, humorous comportment! Idk how to describe it, but your \"hey bud\" brightens up so many ppl's days and I know it's made me feel better when life is feeling a bit cloudy. Come to think of it, Tom, you're always so cheery and fun...how does he do it????!! - Anastasia"
+                }
+                else if (question.className === "question-masterchef" && ans === "beautiful") {
+                    output.className = "message";
+                    output.innerHTML = "Happy birthday Tom! Can’t wait to see you in Kirkland for realsies. - Michael Baick <br> <br>"
+                                       + "Hey dude! Happy bird-day!! Let's hope the only downsizing this year is the number of Ferrero Rochers consumed. In all seriousness, hope you have a great day and can't wait to celebrate with you in person soon! You (and your Mom) were incredible in KDS, and I'm so grateful we met through Kirkland. Can't wait for a spring filled with oreos, Office episodes, original memes, and olive oil!! - Ellie <br> <br> <br>"
+                                       + "Hey Tom,<br><br>Happy birthday, and hopefully this is a great day and the start of a great year for you! I really miss you and everything that used to happen back when we were living together in B-34, but hopefully we’ll get to reunite soon. In the meantime, though, seeing you on Zoom and hearing the weekly “Oh, hey, dudes!” has always been something to look forward to. Just like your screams when you’re losing (to someone who isn’t me) in Smash, your energy never fails to carry over any distance, no matter how long, and make us smile.<br><br>It would be remiss of me, however, not to mention everything else you bring to those around you. We’re so lucky to have a talented pianist, innovative bot maker, patient pset buddy, and understanding and caring friend among us. Thank you for being the person you are, Tom. I can’t wait to see you again and, once things are back to normal, give you a big hug.<br><br>Love,<br>Edward";
+                }
+                else if (question.className === "question-trails" && parseFloat(ans) === 0.903) {
+                    output.className = "message";
+                    output.innerHTML = "";
                 }
                 else if (question.className === "question-election" && ans === "272") {
-                    msg.value = "Hey dude! It is your birthday! I spent many months missing being in Kirkland and being able to yell across the wall to you, Edward, and David Chen. But I can't wait to be living with you at 86 Kirkland this semester. You always find a way to make me laugh and have a great time!\nHappy birthday,\nSarah \n \n \n"
-                                + "Happy Birthday Tom! Though I'm not entirely sure how it happened, I'm so glad we became friends. You keep me on my toes in the best possible way, and though I never know where they will lead, I always look forward to our conversations and other miscellaneous encounters (such as when you stole my phone after CS124 lecture, the photographic evidence of which I encountered when looking for pictures of you in my camera roll, per Edward's request). I hope you have the best day today, and I am looking forward to seeing you in person again soon. At some point we will have to play that Brahms duet that you told me to learn, which I actually did learn over the summer but probably have forgotten at this point. - Rebecca";
+                    output.className = "message";
+                    output.innerHTML = "Hey dude! It is your birthday! I spent many months missing being in Kirkland and being able to yell across the wall to you, Edward, and David Chen. But I can't wait to be living with you at 86 Kirkland this semester. You always find a way to make me laugh and have a great time!<br>Happy birthday,<br>Sarah <br> <br> <br>"
+                                       + "Happy Birthday Tom! Though I'm not entirely sure how it happened, I'm so glad we became friends. You keep me on my toes in the best possible way, and though I never know where they will lead, I always look forward to our conversations and other miscellaneous encounters (such as when you stole my phone after CS124 lecture, the photographic evidence of which I encountered when looking for pictures of you in my camera roll, per Edward's request). I hope you have the best day today, and I am looking forward to seeing you in person again soon. At some point we will have to play that Brahms duet that you told me to learn, which I actually did learn over the summer but probably have forgotten at this point. - Rebecca";
                 }
                 else if (question.className === "question-last" && ans === "Let's go, Tom!!!") {
-                    msg.value = "I'll start putting the photos heres.";
+                    output.className = "message";
+                    output.innerHTML = "I'll start putting the photos here.";
                 }
                 else {
-                    msg.value = "Incorrect answer!";
+                    output.className = "empty";
+                    output.innerHTML = "Incorrect answer!";
                 }
             }
         </script>
