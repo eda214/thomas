@@ -1,10 +1,3 @@
-.question-sample {
-    background: #fff url('./questions/sample.png');
-    background-size: cover;
-    width: 800;
-    height: 450;
-}
-
 .question-zoom {
     background: #fff url('./questions/zoom.png');
     background-size: cover;
@@ -19,15 +12,29 @@
     height: 450;
 }
 
-.question-election {
-    background: #fff url('./questions/election.png');
+.question-shoes {
+    background: #fff url('./questions/shoes.jpg');
     background-size: cover;
     width: 800;
     height: 450;
 }
 
+.question-124 {
+    background: #fff url('./questions/124.jpg');
+    background-size: cover;
+    width: 510;
+    height: 450;
+}
+
 .question-trails {
     background: #fff url('./questions/trails.png');
+    background-size: cover;
+    width: 800;
+    height: 450;
+}
+
+.question-election {
+    background: #fff url('./questions/election.png');
     background-size: cover;
     width: 800;
     height: 450;
