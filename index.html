@@ -10,13 +10,16 @@
     
     <body>
         <center>
+            <img src="./top.png">
         
             <div class="container">
                 Select a challenge: <br>
                 <button id="zoom">Zoom</button>
+                <button id="verification">Verification</button>
                 <button id="masterchef">Master Chef</button>
                 <button id="shoes">Shoes</button>
                 <button id="124">124</button>
+                <button id="chopin">Chopin</button>
                 <button id="trails">Trails</button>
                 <button id="election">Election</button>
                 <button id="last">The Last Challenge</button>
@@ -51,6 +54,14 @@
                 output.innerHTML = "Type the answer to unlock a message!";
             }
             
+            var bverification = document.getElementById("verification");
+            bverification.onclick = function() {
+                output.className = "empty";
+                question.className = "question-verification";
+                addl.style.visibility = 'hidden';
+                output.innerHTML = "Type the answer to unlock a message!";
+            }
+            
             var bmasterchef = document.getElementById("masterchef");
             bmasterchef.onclick = function() {
                 output.className = "empty";
@@ -71,6 +82,14 @@
             b124.onclick = function() {
                 output.className = "empty";
                 question.className = "question-124";
+                addl.style.visibility = 'hidden';
+                output.innerHTML = "Type the answer to unlock a message!";
+            }
+            
+            var bchopin = document.getElementById("chopin");
+            bchopin.onclick = function() {
+                output.className = "empty";
+                question.className = "question-chopin";
                 addl.style.visibility = 'hidden';
                 output.innerHTML = "Type the answer to unlock a message!";
             }
@@ -107,14 +126,18 @@
                 var ans = ansField.value
                 if (question.className === "question-zoom" && ans.toLowerCase().includes("hey") && ans.toLowerCase().includes("dudes")) {
                     output.className = "message";
-                    output.innerHTML = "Happy happy birthday Tom!! Hearing your “hey bud!” upon joining the Kirkland Zoom is always a highlight of my week. Your presence, thoughtfulness, humor, wisdom, and willingness to listen have brought light to so many otherwise-difficult moments, from our abrupt departure from school to a very long election night. I’m so grateful to have grown closer to you over the past year, and I can’t wait for the semester ahead with you. Wishing you a day and year full of nature, sunset runs, chocolate, Multigrain Cheerios, good classes, laughter, peace, and happiness — you deserve the world! - Alia <br> <br> <br>"
-                                       + "HELLLOOOO TOM!!!<br> <br>as I recently mentioned in my dreams you offered to carry me across a Venus fly trap field... and then you carried me!!! Shows how consciously and subconsciously I view you as such a reliable and thoughtful friend. From day 1 I've admired your adventure seeking spirit and how dedicated you are to what you put your mind to. You're always there for your friends no matter what and in all your interactions with us you build people up with like solid, humorous comportment! Idk how to describe it, but your \"hey bud\" brightens up so many ppl's days and I know it's made me feel better when life is feeling a bit cloudy. Come to think of it, Tom, you're always so cheery and fun...how does he do it????!! - Anastasia"
+                    output.innerHTML = "HELLLOOOO TOM!!!<br> <br>as I recently mentioned in my dreams you offered to carry me across a Venus fly trap field... and then you carried me!!! Shows how consciously and subconsciously I view you as such a reliable and thoughtful friend. From day 1 I've admired your adventure seeking spirit and how dedicated you are to what you put your mind to. You're always there for your friends no matter what and in all your interactions with us you build people up with like solid, humorous comportment! Idk how to describe it, but your \"hey bud\" brightens up so many ppl's days and I know it's made me feel better when life is feeling a bit cloudy. Come to think of it, Tom, you're always so cheery and fun...how does he do it????!! - Anastasia <br><br><br>"
+                                       + "Hey dude! Happy bird-day!! Let's hope the only downsizing this year is the number of Ferrero Rochers consumed. In all seriousness, hope you have a great day and can't wait to celebrate with you in person soon! You (and your Mom) were incredible in KDS, and I'm so grateful we met through Kirkland. Can't wait for a spring filled with oreos, Office episodes, original memes, and olive oil!! - Ellie <br> <br> <br>";
+                }
+                else if (question.className === "question-verification" && ans === "21YRS") {
+                    output.className = "message";
+                    output.innerHTML = "Happy happy birthday Tom!! It is such a joy to witness you carrying your world-famous orange water bottle, talking about your home state (you’re from Colorado right? I don’t think you talk about it enough), beep-bopping as a CS concentrator, shutting down websites with David, and encouraging “GO EDWARD GO!!!!!!” Wishing a year of good memories and fun times to one of the best neighbors anyone could ask for! - Maranda <br><br><br>"
+                                       + "HAPPY BIRTH, TOM!! :D We're incredibly lucky to have such a caring and supportive friend like you! Keep on being your cool self, and hope your bday is as lit 🔥 as you are!! - Kathryn";
                 }
                 else if (question.className === "question-masterchef" && ans === "beautiful") {
                     output.className = "message";
-                    output.innerHTML = "Happy birthday Tom! Can’t wait to see you in Kirkland for realsies. - Michael Baick <br> <br>"
-                                       + "Hey dude! Happy bird-day!! Let's hope the only downsizing this year is the number of Ferrero Rochers consumed. In all seriousness, hope you have a great day and can't wait to celebrate with you in person soon! You (and your Mom) were incredible in KDS, and I'm so grateful we met through Kirkland. Can't wait for a spring filled with oreos, Office episodes, original memes, and olive oil!! - Ellie <br> <br> <br>"
-                                       + "Hey Tom,<br><br>Happy birthday, and hopefully this is a great day and the start of a great year for you! I really miss you and everything that used to happen back when we were living together in B-34, but hopefully we’ll get to reunite soon. In the meantime, though, seeing you on Zoom and hearing the weekly “Oh, hey, dudes!” has always been something to look forward to. Just like your screams when you’re losing (to someone who isn’t me) in Smash, your energy never fails to carry over any distance, no matter how long, and make us smile.<br><br>It would be remiss of me, however, not to mention everything else you bring to those around you. We’re so lucky to have a talented pianist, innovative bot maker, patient pset buddy, and understanding and caring friend among us. Thank you for being the person you are, Tom. I can’t wait to see you again and, once things are back to normal, give you a big hug.<br><br>Love,<br>Edward";
+                    output.innerHTML = "Happy birthday Tom! Can’t wait to see you in Kirkland for realsies. - Michael Baick <br> <br> <br>"
+                                       + "Hey Tom! Happy birthday!! Still remember thinking you were a complete asshole when I first met you lol  but have come to appreciate your funny/chill/EXTREMELY HELPFUL personality!! Hope you have an amazing day as the person you are!!! - Fouzia<br><br><br>";
                 }
                 else if (question.className === "question-shoes" && ans.includes("Tom") && ans.includes("Rebecca")) {
                     output.className = "message";
@@ -122,15 +145,21 @@
                 }
                 else if (question.className === "question-124" && ans.includes("Kruskal")) {
                     output.className = "message";
-                    output.innerHTML = "LET'S GO TOM!!!!!! Happy 21st! Have a legendary one my dude. Miss binging chocolate, eating ramen, doing CS, and playing tons of smash with you. I also noticed that we don't have enough pictures together. This is a problem that requires immediate rectification. - David";
+                    output.innerHTML = "LET'S GO TOM!!!!!! Happy 21st! Have a legendary one my dude. Miss binging chocolate, eating ramen, doing CS, and playing tons of smash with you. I also noticed that we don't have enough pictures together. This is a problem that requires immediate rectification. - David"
+                                       + "Happy 21st birthday, Tom!! Thank you for being such an amazing freshman roommate and friend for the last three years. You were hilarious when you showed up to the Kirkland formal in your pajamas. I hope you have a fun and safe year! - Mikey";
+                }
+                else if (question.className === "question-chopin" && ans.toLowerCase() === "hbd") {
+                    output.className = "message";
+                    output.innerHTML = "Hey Tom,<br><br>Happy birthday, and hopefully this is a great day and the start of a great year for you! I really miss you and everything that used to happen back when we were living together in B-34, but hopefully we’ll get to reunite soon. In the meantime, though, seeing you on Zoom and hearing the weekly “Oh, hey, dudes!” has always been something to look forward to. Just like your screams when you’re losing (to someone who isn’t me) in Smash, your energy never fails to carry over any distance, no matter how long, and make us smile.<br><br>It would be remiss of me, however, not to mention everything else you bring to those around you. We’re so lucky to have a talented pianist, innovative bot maker, patient pset buddy, and understanding and caring friend among us. Thank you for being the person you are, Tom. I can’t wait to see you again and, once things are back to normal, give you a big hug.<br><br>Love,<br>Edward";
                 }
                 else if (question.className === "question-trails" && parseFloat(ans) === 0.903) {
                     output.className = "message";
-                    output.innerHTML = "Happy happy birthday Tom!! It is such a joy to witness you carrying your world-famous orange water bottle, talking about your home state (you’re from Colorado right? I don’t think you talk about it enough), beep-bopping as a CS concentrator, shutting down websites with David, and encouraging “GO EDWARD GO!!!!!!” Wishing a year of good memories and fun times to one of the best neighbors anyone could ask for! - Maranda";
+                    output.innerHTML = "Happy happy birthday Tom!! Hearing your “hey bud!” upon joining the Kirkland Zoom is always a highlight of my week. Your presence, thoughtfulness, humor, wisdom, and willingness to listen have brought light to so many otherwise-difficult moments, from our abrupt departure from school to a very long election night. I’m so grateful to have grown closer to you over the past year, and I can’t wait for the semester ahead with you. Wishing you a day and year full of nature, sunset runs, chocolate, Multigrain Cheerios, good classes, laughter, peace, and happiness — you deserve the world! - Alia"
                 }
                 else if (question.className === "question-election" && ans === "272") {
                     output.className = "message";
-                    output.innerHTML = "Hey dude! It is your birthday! I spent many months missing being in Kirkland and being able to yell across the wall to you, Edward, and David Chen. But I can't wait to be living with you at 86 Kirkland this semester. You always find a way to make me laugh and have a great time!<br>Happy birthday,<br>Sarah <br> <br> <br>";
+                    output.innerHTML = "Hey dude! It is your birthday! I spent many months missing being in Kirkland and being able to yell across the wall to you, Edward, and David Chen. But I can't wait to be living with you at 86 Kirkland this semester. You always find a way to make me laugh and have a great time!<br>Happy birthday,<br>Sarah <br> <br> <br>"
+                                       + "Happy birthday Tom!! You are hilarious, so fun to be around, and truly make KPIs sick. Plus, your mom is super cool :) Have a wonderful day and year, and hope to see you in the near future! - Andrea";
                 }
                 else if (question.className === "question-last" && ans === "Let's go, Tom!!!") {
                     output.className = "message";

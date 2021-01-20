@@ -5,6 +5,13 @@
     height: 450;
 }
 
+.question-verification {
+    background: #fff url('./questions/verification.png');
+    background-size: cover;
+    width: 800;
+    height: 450;
+}
+
 .question-masterchef {
     background: #fff url('./questions/masterchef.png');
     background-size: cover;
