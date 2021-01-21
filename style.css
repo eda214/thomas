@@ -33,6 +33,13 @@
     height: 450;
 }
 
+.question-chopin {
+    background: #fff url('./questions/chopin.png');
+    background-size: cover;
+    width: 800;
+    height: 450;
+}
+
 .question-trails {
     background: #fff url('./questions/trails.png');
     background-size: cover;
